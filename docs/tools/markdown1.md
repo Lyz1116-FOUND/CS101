@@ -103,15 +103,13 @@
 [斜体和粗体](#1.斜体和粗体)
 ```
 
-[斜体和粗体](#1.斜体和粗体)
+[斜体和粗体](#_1-斜体和粗体)
 
 链接到另一个 Markdown 文档的某个标题处：
 
 ```markdown
 [QuickStart](./latex/##QuickStart)
 ```
-
-[QuickStart](./latex/##QuickStart)
 
 ## 4. 无序列表
 
