@@ -5,7 +5,7 @@ hero:
   name: COMP101
   tagline: FDUer计算机入门指南
   image:
-    src: /fducslg.jpg
+    src: /assets/fducslg.png
     alt: FDUCSLG
   actions:
     - theme: brand
@@ -27,3 +27,5 @@ features:
     details: 深入探索Linux系统与Shell脚本编程，解锁高效运维与自动化技能。
 
 ---
+<Confetti />
+
