@@ -67,7 +67,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       items: [
         { text: "Markdown", link: "/tools/markdown" },
         { text: "LaTeX", link: "/tools/latex" },
-        { text: "Git & GitHub", link: "/tools/git-and-gitHub" },
+        { text: "Git & GitHub", link: "/tools/git-and-github" },
         { text: "Docker", link: "/tools/docker" },
       ],
     },
