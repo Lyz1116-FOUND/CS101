@@ -20,7 +20,7 @@ LaTeX 基于 TeX（Donald Knuth 在 1978 年为数字化排版设计的排版系
 
 当然也可以使用在线编辑器 [overleaf](https://overleaf.com) ，节省环境配置的时间。
 
-## Quick Start
+## QuickStart
 
 打开编辑器，新建文件，输入以下内容：
 

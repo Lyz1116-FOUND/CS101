@@ -65,17 +65,19 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       collapsible: true,
       collapsed: true,
       items: [
-        { text: "Markdown", link: "/tools/markdown" },
+        { text: "Markdown 入门", link: "/tools/markdown1" },
+        { text: "Markdown 进阶", link: "/tools/markdown2" },
         { text: "LaTeX", link: "/tools/latex" },
         { text: "Git & GitHub", link: "/tools/git-and-github" },
         { text: "Docker", link: "/tools/docker" },
       ],
     },
-    { text: "项目构建",
+    {
+      text: "项目构建",
       collapsible: true,
       collapsed: true,
       items: [
-        {text: "Make入门", link: "/tools/intro-make"},
+        { text: "Make 入门", link: "/tools/intro-make" },
       ],
     },
     {
