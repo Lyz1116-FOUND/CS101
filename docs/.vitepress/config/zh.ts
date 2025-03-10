@@ -53,33 +53,33 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarGuide(): DefaultTheme.Sidebar {
   return [
     {
-      text: "courses",
+      text: "课程",
       collapsible: true,
       collapsed: true,
       items: [
-        { text: "ICS", link: "/courses/ICS" },
+        { text: "计算机系统基础", link: "/courses/ICS" },
       ],
     },
     {
-      text: "linux-and-shell",
+      text: "实用工具",
       collapsible: true,
       collapsed: true,
       items: [
-        { text: "linux-and-shell", link: "/linux-and-shell/linux-and-shell" },
+        { text: "Markdown", link: "/tools/markdown" },
+        { text: "LaTeX", link: "/tools/latex" },
+        { text: "Git & GitHub", link: "/tools/git-and-gitHub" },
+        { text: "Docker", link: "/tools/docker" },
       ],
     },
     {
-      text: "tools",
+      text: "Linux & Shell",
       collapsible: true,
       collapsed: true,
       items: [
-        { text: "markdown", link: "/tools/markdown" },
-        { text: "Latex", link: "/tools/latex" },
-        { text: "git-and-github", link: "/tools/git-and-github" },
-        { text: "docker", link: "/tools/docker" },
+        { text: "Linux & Shell", link: "/linux-and-shell/linux-and-shell" },
       ],
     },
-    { text: "project", link: "/project" },
-    { text: "team", link: "/team" },
+    { text: "项目", link: "/project" },
+    { text: "团队", link: "/team" },
   ]
 }
