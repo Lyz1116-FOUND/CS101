@@ -14,7 +14,7 @@ import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-i
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 
 export const shared = defineConfig({
-  title: 'FDUCSLG',
+  title: 'COMP101',
   lastUpdated: true,
   cleanUrls: true,
   metaChunk: true,

@@ -71,6 +71,13 @@ function sidebarGuide(): DefaultTheme.Sidebar {
         { text: "Docker", link: "/tools/docker" },
       ],
     },
+    { text: "项目构建",
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {text: "Make入门", link: "/tools/intro-make"},
+      ],
+    },
     {
       text: "Linux & Shell",
       collapsible: true,

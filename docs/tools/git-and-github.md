@@ -1,8 +1,8 @@
-<center><font size=7>Git/Github</font></center>
-<p align='right'>2023.9.24</p>
+# Git & Github
 
 ## 前言
-此篇笔记将基于一本叫做Pro Git的书，简短讲述git和github的使用。并且基于一些模拟实验让你快速上手。  
+此篇笔记将基于一本叫做Pro Git的书，简短讲述git和github的使用。并且基于一些模拟实验让你快速上手。
+
 ### 学习资源
 - [Pro Git](https://git-scm.com/book/en/v2)  /  [Pro Git中文版](https://git-scm.com/book/zh/v2)，推荐阅读1-3章
 - [学习git的在线游戏](https://learngitbranching.js.org/)，挺好玩的
@@ -548,6 +548,4 @@ git push origin --delete <branch>
 此篇笔记讲述的仅仅是git的冰山一角，git还有许多有趣的命令等待你们去挖掘  
 不过你已经对git上手了，在实践中慢慢掌握git吧！
 
-<p align='right'>to be continued</p>
-<p align='right'>2023.9.27</p>
 
