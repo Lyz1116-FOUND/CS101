@@ -9,7 +9,7 @@
 
 再后来，随着软件之间的关系逐渐变得复杂，运行一个服务也变得困难起来：php 可能依赖特定版本的 mysql 服务器软件，而 mysql 服务器软件的这个版本又不能在最新的系统中运行，但另一个软件 nginx 偏偏又需要最新的系统才能运行。这个时候，在同一个服务器上就没办法同时运行多个软件。好在天无绝人之路，**虚拟机（Virtual Machine）** 就可以解决这个问题。创建多个虚拟机，在每个虚拟机中安装各个服务软件和它们需要的依赖程序版本，就可以互不干扰地运行多个服务了。
 
-再再后来，人们发现：根本没有必要创建一个完整的虚拟机啊！一个虚拟机会模拟出从底层硬件到操作系统的所有东西，而我们只是想要隔离不同版本的软件，这样的话，完全可以只隔离软件的运行环境，而不需要模拟硬件和操作系统。这就是 **容器（Container）** 的概念。现代意义上的容器首先由 FreeBSD 操作系统实现，BSD 在内核中添加了一组新的功能，统称为 Jails，形象地描述把软件关在隔离「监狱」里的情形。随后很快 Linux 跟进了 Linux VServer 技术，并演进出了 LXC（Linux Containers），可以实现不同环境的隔离。每个环境就是一个容器，容器中的软件可以运行在自己的环境中，只能看到自己需要的软件、文件和网络，而不会影响到其他容器。
+再再后来，人们发现：根本没有必要创建一个完整的虚拟机啊！一个虚拟机会模拟出从底层硬件到操作系统的所有东西，而我们只是想要隔离不同版本的软件，这样的话，完全可以只隔离软件的运行环境，而不需要模拟硬件和操作系统。这就是 **容器（Container）** 的概念。现代意义上的容器首先由 [FreeBSD](https://www.freebsd.org/) 操作系统实现，BSD 在内核中添加了一组新的功能，统称为 [Jails](https://docs.freebsd.org/en/books/handbook/jails/)，形象地描述把软件关在隔离「监狱」里的情形。随后很快 Linux 跟进了 [Linux VServer](http://linux-vserver.org/) 技术，并演进出了 [LXC](https://linuxcontainers.org/)（Linux Containers），可以实现不同环境的隔离。每个环境就是一个容器，容器中的软件可以运行在自己的环境中，只能看到自己需要的软件、文件和网络，而不会影响到其他容器。
 
 容器非常轻量，和虚拟机相比，几乎没有额外的开销，也不像虚拟机在启动、停止时需要几分钟的时间，容器可以在几秒钟内启动、停止。
 
@@ -19,15 +19,17 @@
 
 今天，**Docker 已经不仅仅是后端运维人员偷懒的工具，它已经成为了云计算、微服务、DevOps 等概念的基石**，许多普通软件也会提供打包好的 Docker 镜像，让用户可以在任何地方运行。使用 Docker 可以极大地便利你的开发、测试、部署工作，无需顾虑环境配置问题。
 
-> **你知道吗？**
->
-> 早期的 Docker 依赖于 LXC，但后来 Docker 自己开发了一个更轻量的容器技术和一套镜像规范，称为 libcontainer。
+:::info 你知道吗？
 
-> **Docker 并不「纯粹」？**
->
-> Docker 最初只是一个开源项目，但今天已经成为了一个名为 Docker Inc. 的公司产品（由 Moby Project 社区运行），并且推出了一系列附属商业产品，例如 Docker Enterprise。它曾经有过许多争议：[Docker Hub 擅自停止免费 Team 计划并删除用户镜像，引发社区不满](https://www.docker.com/blog/we-apologize-we-did-a-terrible-job-announcing-the-end-of-docker-free-teams/)。
->
-> 如果你并不喜欢 Docker Inc. 的商业策略，所幸 Docker 的遗产已经成就了开放容器标准 OCI（Open Container Initiative），例如 RedHat 公司的 [Podman](https://podman.io/) 等兼容 Docker 镜像的开源项目正在欣欣向荣地发展。我个人已经不使用 Docker 而是 Podman 很久了，体验也非常好。
+早期的 Docker 依赖于 LXC，但后来 Docker 自己开发了一个更轻量的容器技术和一套镜像规范，称为 [libcontainer](https://github.com/opencontainers/runc/blob/main/libcontainer/README.md)。
+:::
+
+:::info Docker 并不「纯粹」？
+Docker 最初只是一个开源项目，但今天已经成为了一个名为 Docker Inc. 的公司产品（由 Moby Project 社区运行），并且推出了一系列附属商业产品，例如 Docker Enterprise。它曾经有过许多争议：[Docker Hub 擅自停止免费 Team 计划并删除用户镜像，引发社区不满](https://www.docker.com/blog/we-apologize-we-did-a-terrible-job-announcing-the-end-of-docker-free-teams/)。
+
+如果你并不喜欢 Docker Inc. 的商业策略，所幸 Docker 的遗产已经成就了[开放容器标准 OCI（Open Container Initiative）](https://opencontainers.org/)，例如 RedHat 公司的 [Podman](https://podman.io/) 等兼容 Docker 镜像的开源项目正在欣欣向荣地发展。我个人已经不使用 Docker 而是 Podman 很久了，体验也非常好。
+
+:::
 
 ## 2. 几个关于 Docker 的基本事实
 
@@ -37,11 +39,13 @@
    Docker 是一个开源的容器引擎，可以让你随时运行、分享、修改、上传、下载容器。Docker 本身还是一个命令，可以在终端中输入 `docker` 命令来操作容器。
 2. **Docker 的容器和普通的虚拟机有什么区别？**
    虚拟机是模拟出一个完整的计算机环境，包括硬件、操作系统和软件，而容器只是隔离出一个软件运行环境。虚拟机需要额外的开销，而容器几乎没有额外开销。
-3. **Docker 能让我运行什么？**
-   Docker 几乎可以运行任何 Linux 上的服务器软件，例如 nginx、mysql、redis 等。
-4. **Docker 镜像是什么？**
+3. **那我是不是可以不装虚拟机了？**
+   完整的虚拟机和 Docker 容器还是有一定区别。现在工业界的虚拟化技术包括**硬件环境级虚拟化**（如 [QEMU](https://www.qemu.org/)、[VMware](https://www.vmware.com/)、[VirtualBox](https://www.virtualbox.org/)、[KVM](https://www.linux-kvm.org/)、[Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/) 等传统的「虚拟机」）、**操作系统级虚拟化**（如 [LXC](https://linuxcontainers.org/lxc/)、[LXD](https://ubuntu.com/lxd)、[Incus](https://linuxcontainers.org/incus/)）、**应用级虚拟化**（如 Docker、[Podman](https://podman.io/)、[Singularity](https://sylabs.io/singularity/) 等）。Docker 是容器虚拟化技术，由于虚拟程度不同，和虚拟机不是完全替代关系。
+4. **Docker 能让我运行什么？**
+   Docker 几乎可以运行任何 Linux 上的服务器软件和应用软件，例如 nginx、mysql、redis 等。
+5. **Docker 镜像是什么？**
    镜像是一个压缩文件，里面包含了运行一个容器所需要的所有文件和配置。镜像可以用来创建容器。
-5. **Docker Hub 是什么？**
+6. **Docker Hub 是什么？**
     Docker Hub 是一个 Docker 镜像的仓库，你可以在上面找到几乎所有服务器软件的镜像。你也可以上传自己的镜像到 Docker Hub 让别人下载。
 6. **Docker 在 Windows 上也可以装吗？它如何运行 Linux 容器？**
    Docker 在 Windows 上有 Docker Desktop。Docker Desktop 使用了 Windows 10 中的 WSL（Windows Subsystem for Linux）技术，即虚拟机来运行 Linux 容器。因此，Docker Desktop 在 Windows 上运行的容器都是运行在一个 Linux 虚拟机中的。
@@ -51,6 +55,15 @@
 ## 3. 在个人电脑上安装 Docker
 
 本节简单扼要介绍如何在自己的电脑上安装 Docker，更具体地说是 Docker Desktop。**你应当具有阅读英文的基本能力。**
+
+:::info 你知道吗？
+
+下面是 Docker 几个常见产品的介绍：
+
+- **Docker Engine**: Docker 的核心产品，是一个开源的容器引擎，没有界面，一般只在 Linux 服务器上安装；
+- **Docker Desktop**: Docker 的桌面软件，适用于 Windows 和 macOS，有图形界面，本身包含了 Docker Engine、Docker Compose 等工具；
+- **Docker Compose**：Docker 开发的一个工具，用于简化 Docker 容器的配置和启动，可以用一个 YAML 文件描述容器的配置，然后用 `docker compose` 命令启动容器，将在后文介绍。
+:::
 
 1. 前往 Docker 官网：<https://www.docker.com/>；
 2. 在 Product 菜单中找到 Docker Desktop，点击；
@@ -94,7 +107,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-## 5. 简单使用
+## 5. Docker 的简单使用
 
 Docker 的使用非常简单，只需要记住几个命令就可以了。我们以运行 MySQL 为例，介绍运行容器的全过程。
 
@@ -103,17 +116,18 @@ Docker 的使用非常简单，只需要记住几个命令就可以了。我们�
 2. **下载镜像并启动容器**：
 
 ```bash
-docker run --detach --name mysql --env MYSQL_ROOT_PASSWORD=123456 mysql:latest
+docker run --detach --name mysql --env MYSQL_ROOT_PASSWORD=123456 --publish 3306:3306 mysql:latest
 ```
 
 解释：
 
-- `docker run ... mysql:latest`：下载镜像、创建一个新容器并运行。中间 `...` 是运行参数，`mysql:latest` 指定镜像名，格式说明见下；
-- `--detach`（或简写为 `-d`）：后台运行容器；如果不加，当前终端将被 mysql 占用，直到关闭容器。加上后命令会在容器启动后立刻返回，并在后台静默运行容器；
+- `docker run ... mysql:latest`：下载镜像、创建一个新容器并运行。中间 `...` 是运行参数，`mysql:latest` 指定镜像名，格式说明见下面的 5.1 节；
+- `--detach`（或简写为 `-d`）：后台运行容器；如果不加，当前终端将被启动的 mysql 占用，直到关闭容器。加上后命令会在容器启动后立刻返回，并在后台静默运行容器；
 - `--name mysql`：给新建的容器设定名称。如果不加，docker 会自动分配一个随机名称；
-- `--env MYSQL_ROOT_PASSWORD=123456`：设置容器的环境变量，这里是将 MySQL 的 root 用户密码设为 123456。**这个参数需要按照镜像的要求设置，不同镜像有不同的环境变量名**。
+- `--env MYSQL_ROOT_PASSWORD=123456`：设置容器的环境变量，这里是将 MySQL 的 root 用户密码设为 123456。**这个参数需要按照镜像的要求设置，不同镜像有不同的环境变量名，需要阅读镜像的文档或者 Docker Hub 页面**；
+- `--publish 3306:3306`（或简写为 `-p 3306:3306`）：容器的网络环境和主机是隔离的（就像一台虚拟电脑一样）。这个参数将容器内的 3306 端口映射到主机的 3306 端口。这样，你可以用主机的 3306 端口访问容器的 3306 端口。**如果不加这个参数，你只能在容器内部访问 MySQL 数据库，而无法从外部访问**。
 
-总之，我们在后台运行了一个容器，这个容器的初始镜像是 `mysql:latest`，容器名为 mysql，MySQL 数据库的 root 用户密码为 123456。
+总之，我们在后台运行了一个容器，这个容器的初始镜像是 `mysql:latest`，容器名为 mysql，MySQL 数据库的 root 用户密码为 123456。启动之后，从主机上的 3306 端口（也就是 `localhost:3306`）就可以访问这个 MySQL 数据库了。
 
 3. **查看容器状态**：
 
@@ -131,7 +145,7 @@ docker ps -a
 docker exec -it mysql bash
 ```
 
-这里 `-it` 是两个参数的简便写法。`-i`（或 `--interactive`）表示交互式操作，`-t`（或 `--tty`）表示分配一个伪终端，两者合并起来表示分配一个临时终端，并在接下来进入该终端。后面的 `bash` 代表执行 `bash` 命令，进入 mysql 容器的 bash。
+这里 `-it` 是两个参数的简便写法。`-i`（或 `--interactive`）表示交互操作，`-t`（或 `--tty`）表示分配一个伪终端，两者合并起来表示分配一个临时终端，并在接下来进入该终端。后面的 `bash` 代表执行 `bash` 命令，进入 mysql 容器的 bash。
 
 容器可以看成一个微型的 Linux 虚拟机，可以用 Linux 命令浏览。你可以在这里输入 `mysql -u root -p` 来进入 MySQL 数据库，或者 `exit` 退出容器。
 
@@ -141,7 +155,7 @@ docker exec -it mysql bash
 docker logs mysql
 ```
 
-非常好理解，就是输出 mysql 容器的日志。
+非常好理解，就是输出 mysql 容器的日志。一般是 MySQL 主程序（`mysqld`）的输出。
 
 6. **停止容器**：
 
@@ -174,9 +188,9 @@ docker stop mysql
 - `myname/myimage:1.0`：Docker Hub 上的 myname 用户的 myimage 镜像的 1.0 版本；
 - `ghcr.io/myname/myimage`：GitHub Container Registry 上的 myname 用户的 myimage 镜像的最新版本。
 
-## 6. docker-compose
+## 6. docker-compose 简单使用
 
-手写 Docker 命令行也是一件痛苦的事。除了上面的 `--env` 参数，还有很多参数需要记住。这样一来，使用 Docker 不又变得和 LXC 一样麻烦了吗？
+手写 Docker 命令行也是一件痛苦的事。除了上面的 `--env` 参数，还有很多参数需要记住。这样一来，使用 Docker 不又变得和配虚拟机一样麻烦了吗？
 
 为了简化这个过程，Docker 提供了一个叫做 `docker-compose` 的工具，可以用一个 YAML 文件来描述容器的配置，然后用 `docker compose` 命令来启动容器。
 
@@ -209,8 +223,6 @@ docker stop mysql
 一个典型的 `docker-compose.yml` 文件如下：
 
 ```yaml
-version: '3.1'
-
 services:
   mysql:
     image: mysql:latest
@@ -222,13 +234,17 @@ services:
 
 创建这个文件后，在包含这个文件的目录下，你可以用 `docker compose up` 命令来启动这个服务，用 `docker compose down` 命令来停止这个服务。
 
+::: info 问题：怎么我一关闭终端，服务就停止了？
+`docker compose up` 默认会在前台运行。也就是说，日志会输出到终端，而用 `Ctrl+C` 或关闭终端就会停止服务。
+
+如果你想让服务在后台运行，可以加上 `-d` 参数：`docker compose up -d`。
+:::
+
 `docker-compose` 的优势在于，你可以在一个文件中描述多个服务之间的关系，例如一个服务依赖另一个服务，或者一个服务需要另一个服务的输出。这样，你可以用一个命令启动整个应用，而不需要一个一个启动服务。
 
 举例，你需要一个 MySQL 服务和一个 PHP 服务，PHP 服务需要 MySQL 服务。你可以在 `docker-compose.yml` 文件中描述这两个服务，然后用 `docker compose up` 一次性启动这两个服务：
 
 ```yaml
-version: '3.1'
-
 services:
   mysql:
     image: mysql:latest
@@ -241,4 +257,6 @@ services:
       - mysql
 ```
 
-这里 `php` 服务依赖于 `mysql` 服务，`docker compose up` 命令会先启动 `mysql` 服务，然后再启动 `php` 服务，也就是启动两个不同的容器。同理，`docker compose down` 命令会先停止 `php` 服务，再停止 `mysql` 服务。
+这里指示了 `php` 服务依赖于（`depends_on`）`mysql` 服务，`docker compose up` 命令会先启动 `mysql` 服务，然后再启动 `php` 服务，也就是启动两个不同的容器。同理，`docker compose down` 命令会先停止 `php` 服务，再停止 `mysql` 服务。
+
+有关 `docker-compose` 更多的用法和参数，可以查看 [Docker Compose 文档](https://docs.docker.com/compose/)。
