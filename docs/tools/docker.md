@@ -1,6 +1,6 @@
 # Docker
 
-## 1. 什么是 Docker 以及为什么要用它：从服务部署的历史说起
+## 什么是 Docker 以及为什么要用它：从服务部署的历史说起
 为了更好地理解 Docker 的必要性，有必要讲一段历史。
 
 最早，大家想要在服务器上部署一个服务进程，就是**直接运行程序**：例如想启动一个 nginx 服务器，就直接运行 `nginx` 命令。
@@ -31,7 +31,7 @@ Docker 最初只是一个开源项目，但今天已经成为了一个名为 Doc
 
 :::
 
-## 2. 几个关于 Docker 的基本事实
+## 几个关于 Docker 的基本事实
 
 本节解答一些关于 Docker 具体情况的疑惑。如果你仔细阅读了前一节，这些问题应该可以跳过。
 
@@ -52,7 +52,7 @@ Docker 最初只是一个开源项目，但今天已经成为了一个名为 Doc
 7. **镜像不是一个文件吗，什么叫「启动一个镜像」？**
    一个镜像是一个压缩文件，你可以把它想象成一个软件的安装包。启动一个镜像，就是把这个安装包解压，然后运行其中指定好的特定程序。
 
-## 3. 在个人电脑上安装 Docker
+## 在个人电脑上安装 Docker
 
 本节简单扼要介绍如何在自己的电脑上安装 Docker，更具体地说是 Docker Desktop。**你应当具有阅读英文的基本能力。**
 
@@ -74,7 +74,7 @@ Docker 最初只是一个开源项目，但今天已经成为了一个名为 Doc
 
 你可以在终端中输入 `docker --version` 来检查 Docker 是否安装成功。我们接下来所有工作都将在终端中进行。
 
-## 4. 在 Linux 服务器上安装 Docker
+## 在 Linux 服务器上安装 Docker
 
 本节简单扼要介绍如何在 Linux 服务器上安装 Docker。如果你不需要了解，可以跳过。**你应当具有阅读英文的基本能力。**
 
@@ -107,7 +107,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-## 5. Docker 的简单使用
+## Docker 的简单使用
 
 Docker 的使用非常简单，只需要记住几个命令就可以了。我们以运行 MySQL 为例，介绍运行容器的全过程。
 
@@ -165,7 +165,7 @@ docker stop mysql
 
 这里 `mysql` 是容器名，你也可以用容器 ID 来指定容器。已经停止的容器还可以重新用 `docker start mysql` 启动，如果你想进一步删除容器，可以用 `docker rm mysql`。
 
-### 5.1. 镜像名格式
+### 镜像名格式
 
 在上面的例子中，我们用到了 `mysql:latest`，这是一个镜像名。镜像名的格式是 `[源地址]/[仓库名]/[镜像名]:[标签]`，其中：
 
@@ -188,7 +188,7 @@ docker stop mysql
 - `myname/myimage:1.0`：Docker Hub 上的 myname 用户的 myimage 镜像的 1.0 版本；
 - `ghcr.io/myname/myimage`：GitHub Container Registry 上的 myname 用户的 myimage 镜像的最新版本。
 
-## 6. docker-compose 简单使用
+## docker-compose 简单使用
 
 手写 Docker 命令行也是一件痛苦的事。除了上面的 `--env` 参数，还有很多参数需要记住。这样一来，使用 Docker 不又变得和配虚拟机一样麻烦了吗？
 
