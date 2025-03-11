@@ -209,23 +209,7 @@ Markdown 支持 Emoji，例如：
 
 &#x1F681; 这个是一个直升机图标
 
-### 10.3. 使用 Font Awesome（适用于支持 HTML 的环境）
-
-如果你的 Markdown 解析器支持 HTML（如 VitePress），可以使用 Font Awesome：
-
-```markdown
-<i class="fa fa-home"></i> 主页
-```
-
-在你的 VitePress 项目中，你需要先引入 Font Awesome：
-
-```html
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome
-```
-
-更多的图标和玩法可以参考 [font-awesome](http://fortawesome.github.io/Font-Awesome/3.2.1/icons/) 官方网站。
-
-### 10.4. 使用 SVG 图标
+### 10.3. 使用 SVG 图标
 
 你可以直接插入 SVG 代码：
 
