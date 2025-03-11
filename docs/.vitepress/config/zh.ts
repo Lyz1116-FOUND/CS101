@@ -88,7 +88,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
     //     { text: "Linux & Shell", link: "/linux-and-shell/linux-and-shell" },
     //   ],
     // },
-    { text: "项目", link: "/project" },
-    { text: "团队", link: "/team" },
+    { text: "关于 COMP101 项目", link: "/project" },
+    { text: "关于我们", link: "/team" },
   ]
 }
