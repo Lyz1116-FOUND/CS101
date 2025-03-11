@@ -52,18 +52,18 @@ function nav(): DefaultTheme.NavItem[] {
 
 function sidebarGuide(): DefaultTheme.Sidebar {
   return [
-    {
-      text: "课程",
-      collapsible: true,
-      collapsed: true,
-      items: [
-        { text: "计算机系统基础", link: "/courses/ICS" },
-      ],
-    },
+    // {
+    //   text: "课程",
+    //   collapsible: true,
+    //   collapsed: false,
+    //   items: [
+    //     { text: "计算机系统基础", link: "/courses/ICS" },
+    //   ],
+    // },
     {
       text: "实用工具",
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       items: [
         { text: "Markdown 入门", link: "/tools/markdown1" },
         { text: "Markdown 进阶", link: "/tools/markdown2" },
@@ -75,19 +75,19 @@ function sidebarGuide(): DefaultTheme.Sidebar {
     {
       text: "项目构建",
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       items: [
         { text: "Make 入门", link: "/tools/intro-make" },
       ],
     },
-    {
-      text: "Linux & Shell",
-      collapsible: true,
-      collapsed: true,
-      items: [
-        { text: "Linux & Shell", link: "/linux-and-shell/linux-and-shell" },
-      ],
-    },
+    // {
+    //   text: "Linux & Shell",
+    //   collapsible: true,
+    //   collapsed: false,
+    //   items: [
+    //     { text: "Linux & Shell", link: "/linux-and-shell/linux-and-shell" },
+    //   ],
+    // },
     { text: "项目", link: "/project" },
     { text: "团队", link: "/team" },
   ]
