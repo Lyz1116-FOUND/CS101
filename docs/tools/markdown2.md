@@ -1,12 +1,12 @@
 # Markdown 进阶
 
-## 1. 内容目录
+## 内容目录
 
 在段落中填写 `[TOC]` 以显示全文内容的目录结构。
 
 [[TOC]]
 
-## 2. 标签分类
+## 标签分类
 
 在编辑区任意行的列首位置输入以下代码给文稿标签：
 
@@ -20,7 +20,7 @@
 Tags: 数学 英语 Markdown
 ```
 
-## 3. 删除线
+## 删除线
 
 使用 ~~ 表示删除线。
 
@@ -32,7 +32,7 @@ Tags: 数学 英语 Markdown
 
 ~~这是一段错误的文本。~~
 
-## 4. 注脚
+## 注脚
 
 使用 [^注脚名] 表示注脚。
 
@@ -44,7 +44,7 @@ Tags: 数学 英语 Markdown
 [^footnote]: I love FDUCSLG!
 ```
 
-## 5. LaTeX 公式
+## LaTeX 公式
 
 `$` 表示行内公式： 
 
@@ -80,7 +80,7 @@ $$
 
 学习 [Latex](./latex) 获得更多使用方法。
 
-## 6. 加强的代码块
+## 加强的代码块
 
 支持四十一种编程语言的语法高亮的显示，行号显示。
 
@@ -124,7 +124,7 @@ function fib(n) {
 document.write(fib(10));
 ```
 
-## 7. Mermaid 序列图
+## Mermaid 序列图
 
 ```mermaid
 sequenceDiagram
@@ -136,7 +136,7 @@ sequenceDiagram
 
 ### 更多语法参考：[Mermaid 序列图语法参考](https://knsv.github.io/mermaid/#sequence-diagrams)
 
-## 8. 表格
+## 表格
 
 ```markdown
 | 项目   |  价格 | 数量 |
@@ -152,7 +152,7 @@ sequenceDiagram
 | 手机   |  200$ |  12  |
 | 管线   |    1$ | 234  |
 
-## 9. Html 标签
+## Html 标签
 
 本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：
 
@@ -186,9 +186,9 @@ sequenceDiagram
     </tr>
 </table>
 
-## 10. 内嵌图标
+## 内嵌图标
 
-### 10.1. 使用 Emoji
+### 使用 Emoji
 
 Markdown 支持 Emoji，例如：
 
@@ -198,7 +198,7 @@ Markdown 支持 Emoji，例如：
 
 🚀 这个是一个火箭图标
 
-### 10.2. 使用 Unicode 字符
+### 使用 Unicode 字符
 
 可以使用 HTML 的 `&#x` 方式插入 Unicode 图标：
 
@@ -208,7 +208,7 @@ Markdown 支持 Emoji，例如：
 
 &#x1F681; 这个是一个直升机图标
 
-### 10.3. 使用 SVG 图标
+### 使用 SVG 图标
 
 你可以直接插入 SVG 代码：
 
@@ -224,7 +224,7 @@ Markdown 支持 Emoji，例如：
 
 这需要 Markdown 解析器支持 HTML（如 VitePress）。
 
-## 11. Todo 列表
+## Todo 列表
 
 使用带有 [ ] 或 [x]（未完成 或 已完成）项的列表语法撰写一个待办事宜列表，并且支持子列表嵌套以及混用Markdown语法，例如：
 
