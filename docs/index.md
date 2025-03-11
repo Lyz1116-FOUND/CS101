@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: 启动！
-      link: /courses/ICS.md
+      link: /tools/markdown1.md
 
 features:
   - icon: 📝
