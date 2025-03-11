@@ -152,9 +152,9 @@ sequenceDiagram
 | 手机   |  200$ |  12  |
 | 管线   |    1$ | 234  |
 
-## Html 标签
+## HTML 标签
 
-本站支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：
+部分平台支持在 Markdown 语法中嵌套 HTML 标签，譬如，你可以用 HTML 写一个纵跨两行的表格：
 
 ```markdown
 <table>
