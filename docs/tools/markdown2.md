@@ -88,18 +88,19 @@ $$
 Python：
 
 ```python
-@requires_authorization
-def somefunc(param1='', param2=0):
-    '''A docstring'''
-    if param1 > param2: # interesting
-        print 'Greater'
-    return (param2 - param1 + 1) or None
+import time
 
-class SomeClass:
-    pass
+def countdown(time_sec):
+    while time_sec:
+        mins, secs = divmod(time_sec, 60)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        print(timeformat, end='\r')
+        time.sleep(1)
+        time_sec -= 1
 
->>> message = '''interpreter
-... prompt'''
+    print("stop")
+
+countdown(5)
 ```
 
 JavaScript：
