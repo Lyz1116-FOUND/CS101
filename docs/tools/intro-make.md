@@ -1,7 +1,7 @@
 # Make 入门
 > [!note]
 > 学习这一篇的内容，需要你对以下技能有基本的了解：
-> * 命令行的基本运用
+> * 命令行的基本运用（请参考[这篇文档](../linux-and-shell/basic-command-line)）
 
 
 随着学习的深入，同学们编写的代码会逐渐需要多个文件的协同工作。而本文介绍的 Make 便是多文件编译的事实标准。它通过一套基于规则匹配的机制，可以允许我们方便地定义一系列编译规则。Make 程序会根据这些规则，自动地找出哪些文件需要重新编译，大大节省编译时间。
@@ -147,12 +147,12 @@ main: main.o utils.o
 示例：
 ```makefile
 %.o: %.c
-    gcc -c $< -o $@
+	gcc -c $< -o $@
 ```
 等价于：
 ```makefile
 main.o: main.c
-    gcc -c main.c -o main.o
+	gcc -c main.c -o main.o
 ```
 #### $^ （所有依赖项）
 代表当前规则的**所有**依赖文件，用空格分隔。适用于链接多个对象文件。
@@ -160,12 +160,12 @@ main.o: main.c
 示例：
 ```makefile
 main: main.o utils.o
-    gcc -o $@ $^
+	gcc -o $@ $^
 ```
 等价于：
 ```makefile
 main: main.o utils.o
-    gcc -o main main.o utils.o
+	gcc -o main main.o utils.o
 ```
 #### $* （匹配模式的主干部分）
 代表模式匹配的**通配符**部分，即 `%` 所匹配的内容。通常用于处理不同扩展名的文件。
@@ -173,7 +173,7 @@ main: main.o utils.o
 示例：
 ```makefile
 %.o: %.c
-    gcc -c $< -o $@
+	gcc -c $< -o $@
 ```
 如果执行 `make main.o`，则这里我们有：
 
