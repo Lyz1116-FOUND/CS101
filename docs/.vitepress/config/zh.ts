@@ -80,14 +80,14 @@ function sidebarGuide(): DefaultTheme.Sidebar {
         { text: "Make 入门", link: "/tools/intro-make" },
       ],
     },
-    // {
-    //   text: "Linux & Shell",
-    //   collapsible: true,
-    //   collapsed: false,
-    //   items: [
-    //     { text: "Linux & Shell", link: "/linux-and-shell/linux-and-shell" },
-    //   ],
-    // },
+    {
+       text: "Linux & Shell",
+       collapsible: true,
+       collapsed: false,
+       items: [
+         { text: "基本命令行常识", link: "/linux-and-shell/basic-command-line" },
+       ],
+    },
     { text: "关于 COMP101 项目", link: "/project" },
     { text: "关于我们", link: "/team" },
   ]
