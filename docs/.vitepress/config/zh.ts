@@ -86,7 +86,8 @@ function sidebarGuide(): DefaultTheme.Sidebar {
        collapsed: false,
        items: [
          { text: "基本命令行常识", link: "/linux-and-shell/basic-command-line" },
-       ],
+         { text: "发行版相关", link: "/linux-and-shell/on-distros" },
+        ],
     },
     { text: "关于 COMP101 项目", link: "/project" },
     { text: "关于我们", link: "/team" },
