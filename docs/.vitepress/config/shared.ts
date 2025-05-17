@@ -30,7 +30,7 @@ export const shared = defineConfig({
         repoURL: () => 'https://github.com/FDUCSLG/COMP101',
       }),
       GitChangelogMarkdownSection({
-        exclude: (id) => id.endsWith('index.md'),
+        exclude: (id) => id.endsWith('index.md') || id.endsWith('team.md'),
         sections: {
           // 禁用页面历史
           disableChangelog: true,
