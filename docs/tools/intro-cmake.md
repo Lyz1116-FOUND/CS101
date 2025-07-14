@@ -1,6 +1,6 @@
 # CMake 入门
 > [!note]
-> 学习这一篇的内容，需要你对以下技能有基本的了解：
+> 学习本文内容，需要你对以下技能有基本的了解：
 > * Make 入门（请参考[这篇文档](./intro-make.md)） 
 > 
 > 更重要的是，用过 Make 后，你更能体会到 CMake 带来的便利。
@@ -29,7 +29,7 @@ brew install cmake
 
 下面打开终端，键入：
 
-```plain
+```bash
 $ cmake --version
 cmake version 4.0.1
 
@@ -115,16 +115,11 @@ cmake -B build -DCMAKE_BUILD_TYPE=Release
 
 CMake 通过一个名为 `CMakeLists.txt` 的文件定义构建规则。常见语法如下：
 
-### 定义项目/约束CXX标准
+### 定义项目
 
 ```cmake
 # 规定 CMake 最低版本要求
 cmake_minimum_required(VERSION 3.15)
-
-# 规定 C++ 最低标准
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
 # 定义项目
 project(prj LANGUAGES C CXX)
@@ -170,8 +165,9 @@ CMake 提供了很多方便的命令管理 target 的属性，这里的 target �
 target_sources(myapp PUBLIC hello.cpp other.cpp)    # 添加源文件 
 target_include_directories(myapp PUBLIC include)    # 添加头文件搜索目录
 target_link_libraries(myapp PUBLIC hellolib)        # 添加链接库
-target_add_definitions(myapp PUBLIC -DMY_MACRO=1)   # 添加宏定义 MY_MACRO=1
+target_compile_definitions(myapp PUBLIC MY_MACRO=1)   # 添加宏定义 MY_MACRO=1
 target_compile_options(myapp PUBLIC -fopenmp)       # 添加编译选项
+target_compile_features(mylib PUBLIC cxx_std_17)    # 为指定目标启用编译器特性
 ```
 
 这些命令只对指定的 target 生效，而不会影响全局。
@@ -202,10 +198,9 @@ add_compile_options(-fopenmp)     # 添加编译选项
 cmake_minimum_required(VERSION 3.15)
 project(prj)
 
-set(CMAKE_CXX_STANDARD 17)
-
 add_executable(prj main.cpp)
 target_include_directories(prj PUBLIC include)
+target_compile_features(prj PUBLIC cxx_std_17)
 ```
 
 但是直接引入头文件，函数实现在头文件里，没有提前编译，每次需要重复编译同样的内容，编译时间长。
@@ -224,12 +219,11 @@ target_include_directories(prj PUBLIC include)
 cmake_minimum_required(VERSION 3.15)
 project(prj)
 
-set(CMAKE_CXX_STANDARD 17)
-
 add_subdirectory(fmt)
 
 add_executable(prj main.cpp)
 target_link_libraries(prj fmt::fmt)
+target_compile_features(prj PUBLIC cxx_std_17)
 ```
 
 ### 引用系统中安装的第三方库 `find_package`
@@ -254,12 +248,11 @@ sudo apt install libfmt-dev
 cmake_minimum_required(VERSION 3.15)
 project(prj)
 
-set(CMAKE_CXX_STANDARD 17)
-
-find_package(fmt)
+find_package(fmt REQUIRED)
 
 add_executable(prj main.cpp)
 target_link_libraries(prj fmt::fmt)
+target_compile_features(prj PUBLIC cxx_std_17)
 ```
 
 在CMake中，一个项目可以包含多个库。CMake允许一个包（package）提供多个库，这些库也被称为组件（components）。因此，在使用 `target_link_libraries` 指令链接库时，应采用 `包名::组件名` 的格式。  
