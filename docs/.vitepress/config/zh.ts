@@ -78,6 +78,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
       collapsed: false,
       items: [
         { text: "Make 入门", link: "/tools/intro-make" },
+        { text: "CMake 入门", link: "/tools/intro-cmake" },
       ],
     },
     {
