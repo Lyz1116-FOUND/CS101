@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: COMP101           
-  text: 复旦大学本科生计算机入门指南
+  name: CS101           
+  text: 复旦大学计算机入门指南
   image:
     src: /assets/fducslg.png
     alt: FDUCSLG
