@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: COMP101
+  name: CS101
   text: A Beginner's Guide to Computer Science for Fudaners
   image:
     src: /assets/fducslg.png
