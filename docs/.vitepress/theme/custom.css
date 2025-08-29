@@ -20,6 +20,30 @@
     /* 确保文本颜色透明 */
 }
 
+@media (min-width: 960px) {
+
+    .VPContent .VPHero.has-image .container{
+        height: 270px;
+    }
+
+    .VPContent .VPHero.has-image .main{
+        max-width: 900px;
+    }
+
+    .VPHomeHero .main .name {
+        font-size: 80px;
+        line-height: 120px;
+    }
+
+    .VPHomeHero .main .text{
+        max-width: 700px;
+    }
+
+    .VPContent.is-home {
+        padding-top: 130px;
+    }
+}
+
 .VPButton.brand {
     background-color: #f472b6 !important;
 }
@@ -27,6 +51,7 @@
 .VPLocalSearchBox #localsearch-list mark {
     background-color: rgba(255, 138, 128, 0.3);
 }
+
 /* .vitepress\theme\style\blur.css */
 :root {
 
