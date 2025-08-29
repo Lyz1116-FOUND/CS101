@@ -10,7 +10,7 @@ export const en = defineConfig({
     sidebar: sidebarGuide(),
 
     editLink: {
-      pattern: 'https://github.com/FDUCSLG/COMP101/edit/main/docs/:path',
+      pattern: 'https://github.com/FDUCSLG/CS101/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
 
