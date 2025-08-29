@@ -27,7 +27,7 @@ export const shared = defineConfig({
     plugins: [
       GitChangelog({
         maxGitLogCount: 2000,
-        repoURL: () => 'https://github.com/FDUCSLG/COMP101',
+        repoURL: () => 'https://github.com/FDUCSLG/CS101',
       }),
       GitChangelogMarkdownSection({
         exclude: (id) => id.endsWith('index.md') || id.endsWith('team.md'),
@@ -72,7 +72,7 @@ export const shared = defineConfig({
   },
 
   sitemap: {
-    hostname: 'https://comp101.fducslg.com/',
+    hostname: 'https://cs101.fducslg.com/',
     transformItems(items) {
       return items.filter((item) => !item.url.includes('migration'))
     }
@@ -101,6 +101,6 @@ export const shared = defineConfig({
     search: {
       provider: 'local'
     },
-    socialLinks: [{ icon: 'github', link: 'https://github.com/FDUCSLG/COMP101' }]
+    socialLinks: [{ icon: 'github', link: 'https://github.com/FDUCSLG/CS101' }]
   }
 })

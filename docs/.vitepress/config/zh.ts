@@ -10,7 +10,7 @@ export const zh = defineConfig({
     sidebar: sidebarGuide(),
 
     editLink: {
-      pattern: 'https://github.com/FDUCSLG/COMP101/edit/main/docs/:path',
+      pattern: 'https://github.com/FDUCSLG/CS101/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页面'
     },
 
@@ -90,7 +90,7 @@ function sidebarGuide(): DefaultTheme.Sidebar {
          { text: "发行版相关", link: "/linux-and-shell/on-distros" },
         ],
     },
-    { text: "关于 COMP101 项目", link: "/project" },
+    { text: "关于 CS101 项目", link: "/project" },
     { text: "关于我们", link: "/team" },
   ]
 }
