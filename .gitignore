@@ -4,3 +4,4 @@ dist
 .vscode
 .idea
 docs/.vitepress/cache
+package-lock.json
