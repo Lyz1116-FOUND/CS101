@@ -5,7 +5,7 @@
 @import './style/main.css';
 
 .VPHomeHero .main .text,
-.VPHomeHero .main .name span {
+.VPHomeHero .main .name.clip {
     --tw-gradient-from: #99d3fb;
     --tw-gradient-via: #a1b8fc;
     /* 中间颜色点 */
@@ -23,14 +23,15 @@
 @media (min-width: 960px) {
 
     .VPContent .VPHero.has-image .container{
-        height: 270px;
+        height: 25vh;
+        margin-bottom: 5vh;
     }
 
     .VPContent .VPHero.has-image .main{
         max-width: 900px;
     }
 
-    .VPHomeHero .main .name {
+    .VPHomeHero .main .name.clip {
         font-size: 80px;
         line-height: 120px;
     }
@@ -40,7 +41,11 @@
     }
 
     .VPContent.is-home {
-        padding-top: 130px;
+        padding-top: 10vh;
+    }
+
+    .VPHero .image-container {
+        transform: translate(-10px, 0.5vh);
     }
 }
 
