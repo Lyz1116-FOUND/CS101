@@ -13,8 +13,8 @@ import { NolebaseEnhancedReadabilitiesPlugin } from '@nolebase/vitepress-plugin-
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold';
 import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-highlight-targeted-heading/client';
 import { InjectionKey } from '@nolebase/vitepress-plugin-git-changelog/client';
-import { ShareButton } from '@theojs/lumen';//不好看
-import { HomeFooter } from '@theojs/lumen'
+// import { ShareButton } from '@theojs/lumen';//不好看
+import { Footer } from '@theojs/lumen'
 import { Footer_Data } from '../data/footerData.ts';
 import {
   NolebaseInlineLinkPreviewPlugin,
@@ -40,7 +40,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // 'aside-outline-before': () => h(ShareButton),
       'home-hero-before': () => h(Hero),
-      'layout-bottom': () => h(HomeFooter, { Footer_Data }),
+      'layout-bottom': () => h(Footer, { Footer_Data }),
       'nav-bar-content-after': () => h(NolebaseEnhancedReadabilitiesMenu),
       'nav-screen-content-after': () => h(NolebaseEnhancedReadabilitiesScreenMenu),
       'layout-top': () => [h(NolebaseHighlightTargetedHeading)],
