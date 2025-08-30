@@ -121,30 +121,6 @@ const contributors = [
 ]
 </script>
 
-<style>
-
-@media (min-width: 768px) {
-    .VPTeamPage[data-v-5f7da39d] {
-        margin: 0 0;
-    }
-}
-
-@media (min-width: 960px) {
-    .VPTeamPageTitle[data-v-baf690b4] {
-        padding: 0px 40px 48px;
-    }
-}
-
-@media (min-width: 768px) {
-    .lead[data-v-baf690b4] {
-        max-width: 740px;
-        letter-spacing: 0.1px;
-        line-height: 28px;
-        font-size: 20px;
-    }
-}
-</style>
-
 <VPTeamPage>
 <VPTeamPageSection>
     <template #title>组织</template>
