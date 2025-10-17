@@ -35,7 +35,7 @@ npm install
 npm run docs:dev
 ```
 
-这样就可以在[http://localhost:5173](http://localhost:5173)实时预览您的编辑了。
+这样就可以在 http://localhost:5173 实时预览您的编辑了。
 
 ### 修改工作
 每次修改前，您应当创建一个新的 branch，并在那里修改。
