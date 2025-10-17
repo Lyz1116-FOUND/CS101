@@ -36,7 +36,7 @@ export const shared = defineConfig({
           // 禁用页面历史
           disableChangelog: true,
           // 禁用贡献者
-          disableContributors: false,
+          disableContributors: true,
         },
       }) as any,
       PageProperties(),
