@@ -43,6 +43,7 @@ export const shared = defineConfig({
       PagePropertiesMarkdownSection({
         excludes: [
           'index.md',
+          'project/team.md'
         ],
       }),
       groupIconVitePlugin({
