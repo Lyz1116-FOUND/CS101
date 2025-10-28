@@ -8,13 +8,16 @@
 - 智能补全；基于代码规则和上下文自动提示代码片段（vscode的‘tap’代替思考）
 ### 常见的编辑器
 - Windows记事本/Mac文本编辑/Linux vim
-- VS code/GitHub网页编辑器/Dev-C++/Code::Blocks/X-code(Mac)
+- VS code/GitHub网页编辑器
+- vscode环境配置请移步至....
+
+
+## 集成开发环境(IDE)Dev-C++/Code::Blocks/X-code(Mac)
+### 什么是集成开发环境？
+集成开发环境
+
+
 
 ### 下载
  - Dev-C++(Windows)下载：    
- - VS code(Windows)下载：
- - Vs code(Mac)下载：
- - VS code(Linux)下载：
  - Code::Blocks(windows)下载：
-
-## 集成开发环境
